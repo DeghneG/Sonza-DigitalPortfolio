@@ -3,7 +3,7 @@ import Win from './Win'
 
 export default function About() {
   return (
-    <section id="about" className="scroll-mt-4 py-24 sm:py-36">
+    <section id="about" className="scroll-mt-4 py-16 sm:py-24">
       <div className="wrap grid gap-10 lg:grid-cols-12 lg:gap-16">
         <div data-reveal className="lg:col-span-7">
           <Win title="about.txt" right="read-only">

@@ -1,3 +1,4 @@
+import { useRef } from 'react'
 import { footer, site } from '../content/site'
 import { useReveal } from '../hooks/useReveal'
 import Arrow from './Arrow'
@@ -7,6 +8,18 @@ const rev = new Intl.DateTimeFormat('en-US', { month: 'short', year: 'numeric' }
 /** The sheet's title block: the strip every drawing ends with, doubling as the site's exit. */
 export default function Footer() {
   const ref = useReveal<HTMLElement>({ start: 'top 98%' })
+  const mark = useRef<HTMLDivElement>(null)
+
+  // Spotlight follows the pointer anywhere over the footer; it lights the outline under it.
+  const onMove = (e: React.PointerEvent) => {
+    const m = mark.current
+    if (!m || e.pointerType !== 'mouse') return
+    const r = m.getBoundingClientRect()
+    m.style.setProperty('--mx', `${e.clientX - r.left}px`)
+    m.style.setProperty('--my', `${e.clientY - r.top}px`)
+    m.style.setProperty('--glow', '1')
+  }
+  const onLeave = () => mark.current?.style.setProperty('--glow', '0')
 
   const cells = [
     { k: 'Drawn by', v: site.name },
@@ -16,7 +29,7 @@ export default function Footer() {
   ]
 
   return (
-    <footer ref={ref} aria-label={footer.label} className="relative mt-10 overflow-hidden border-t hair">
+    <footer ref={ref} onPointerMove={onMove} onPointerLeave={onLeave} aria-label={footer.label} className="relative mt-10 overflow-hidden border-t hair">
       <div className="wrap pt-16">
         <div data-reveal className="grid border hair md:grid-cols-12">
           <dl className="grid grid-cols-2 md:col-span-8 md:grid-cols-4">
@@ -63,13 +76,10 @@ export default function Footer() {
       </div>
 
       {/* Name cropped by the sheet edge: the last thing on the page, never a heading */}
-      <p
-        aria-hidden
-        className="f-display pointer-events-none mt-8 select-none whitespace-nowrap text-center text-[clamp(1.6rem,7.6vw,11rem)] leading-[0.74] text-transparent [-webkit-text-stroke:1px_var(--color-hair)]"
-        style={{ marginBottom: '-0.1em' }}
-      >
-        John Khyne
-      </p>
+      <div ref={mark} aria-hidden className="foot-mark select-none pt-14" style={{ marginBottom: "-0.1em" }}>
+        <p className="f-display foot-word foot-word--base">John Khyne</p>
+        <p className="f-display foot-word foot-word--lit">John Khyne</p>
+      </div>
     </footer>
   )
 }

@@ -7,10 +7,10 @@ export default function Work() {
   const [active, setActive] = useState<Category>('Finals')
 
   return (
-    <section id="work" className="scroll-mt-4 py-24 sm:py-36">
+    <section id="work" className="scroll-mt-4 py-16 sm:py-24">
       <div className="wrap">
         <div data-reveal className="mb-12 flex flex-col gap-4 sm:mb-16 sm:flex-row sm:items-end sm:justify-between">
-          <h2 className="f-display text-[clamp(1.5rem,7.2vw,7rem)]">Work</h2>
+          <h2 className="f-display text-[clamp(1.5rem,4.4vw,3.6rem)]">Work</h2>
           <p className="f-mono prompt dim">ls work/ --by-term</p>
         </div>
 

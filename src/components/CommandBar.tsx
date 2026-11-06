@@ -31,7 +31,7 @@ export default function CommandBar() {
           href={site.resume}
           target="_blank"
           rel="noreferrer"
-          className="f-mono flex items-center gap-2 bg-bone px-4 text-ink transition-opacity duration-300 hover:opacity-80 sm:px-6"
+          className="f-mono silver flex items-center gap-2 px-4 sm:px-6"
         >
           Resume <span className="hidden sm:inline-flex"><Arrow /></span>
         </a>

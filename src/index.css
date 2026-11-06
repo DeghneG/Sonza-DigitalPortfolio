@@ -10,13 +10,14 @@
   --color-mute: #8c8c88;
   --color-paper: #ececea;
   --color-hair: rgb(236 236 234 / 0.16);
+  --color-silver: #c3c8cc;
 }
 
 html {
   scroll-behavior: smooth;
   background: var(--color-ink);
-  scrollbar-width: thin;
-  scrollbar-color: #3a3a3a var(--color-ink);
+  scrollbar-width: none; /* progress bar replaces it */
+  -ms-overflow-style: none;
 }
 
 body {
@@ -32,10 +33,7 @@ body {
 }
 
 ::selection { background: var(--color-bone); color: var(--color-ink); }
-::-webkit-scrollbar { width: 8px; }
-::-webkit-scrollbar-track { background: var(--color-ink); }
-::-webkit-scrollbar-thumb { background: #333; }
-::-webkit-scrollbar-thumb:hover { background: #555; }
+html::-webkit-scrollbar, body::-webkit-scrollbar { display: none; width: 0; height: 0; }
 
 a, button { cursor: pointer; }
 :focus-visible { outline: 1px solid var(--color-bone); outline-offset: 3px; }
@@ -79,7 +77,7 @@ a, button { cursor: pointer; }
 .sheet-frame i {
   position: absolute;
   width: 11px; height: 11px;
-  border-color: var(--color-bone);
+  border-color: var(--color-silver);
   border-style: solid;
   border-width: 0;
 }
@@ -123,7 +121,7 @@ a, button { cursor: pointer; }
 .u:hover::after, .u:focus-visible::after { transform: scaleX(1); transform-origin: left; }
 
 .flip { transition: background-color 0.35s cubic-bezier(0.16,1,0.3,1), color 0.35s cubic-bezier(0.16,1,0.3,1); }
-.flip:hover, .flip:focus-visible { background: var(--color-bone); color: var(--color-ink); }
+.flip:hover, .flip:focus-visible { background: var(--silver-plate); background-size: auto, 220% 100%; background-position: 0 0, 100% 0; color: var(--color-ink); }
 .flip:hover .dim, .flip:focus-visible .dim { color: #555; }
 
 .hatch {
@@ -164,3 +162,30 @@ a, button { cursor: pointer; }
   -webkit-mask-image: radial-gradient(circle 16rem at var(--mx) var(--my), #000 0%, transparent 100%);
   mask-image: radial-gradient(circle 16rem at var(--mx) var(--my), #000 0%, transparent 100%);
 }
+
+/* Credentials ruler: the ongoing term drifts, the playhead pulses */
+.hatch-drift {
+  background-size: 9.899px 9.899px;
+  animation: hatch-drift 1.4s linear infinite;
+}
+@keyframes hatch-drift { to { background-position: 9.899px 0; } }
+.head-pulse { animation: head-pulse 1.6s ease-in-out infinite; }
+@keyframes head-pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.15; } }
+
+/* brushed silver: fine horizontal grain over a long sheen */
+:root {
+  --silver-plate:
+    repeating-linear-gradient(0deg, rgb(255 255 255 / 0.1) 0 1px, rgb(0 0 0 / 0.05) 1px 2px),
+    linear-gradient(105deg, #8f9599 0%, #dfe2e4 22%, #f4f5f6 38%, #b4b9bd 52%, #eceeef 70%, #9aa0a4 100%);
+}
+.silver {
+  color: #0b0b0b;
+  background: var(--silver-plate);
+  background-size: auto, 220% 100%;
+  background-position: 0 0, 0 0;
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.7), inset 0 -1px 0 rgb(0 0 0 / 0.28);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  transition: background-position 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.silver:hover, .silver:focus-visible { background-position: 0 0, 100% 0; }

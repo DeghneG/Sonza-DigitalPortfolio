@@ -44,7 +44,7 @@ export default function Contact() {
                   href={site.resume}
                   target="_blank"
                   rel="noreferrer"
-                  className="f-mono flex items-center gap-2 bg-bone px-5 py-3 text-ink transition-opacity hover:opacity-80"
+                  className="f-mono silver flex items-center gap-2 px-5 py-3"
                 >
                   Resume <Arrow />
                 </a>

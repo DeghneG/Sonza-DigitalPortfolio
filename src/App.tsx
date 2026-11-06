@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Routes, useLocation } from 'react-router-dom'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import TopBar from './components/TopBar'
+import ScrollProgress from './components/ScrollProgress'
 import CommandBar from './components/CommandBar'
 import Footer from './components/Footer'
 import Home from './pages/Home'
@@ -45,6 +46,7 @@ export default function App() {
     <BrowserRouter>
       <ScrollManager />
       <Shutter />
+      <ScrollProgress />
       <div className="sheet-frame" aria-hidden>
         <i /><i /><i /><i />
       </div>

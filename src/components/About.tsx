@@ -1,21 +1,23 @@
 import { about } from '../content/site'
 import Win from './Win'
+import PhotoFrame from './PhotoFrame'
 
 export default function About() {
   return (
     <section id="about" className="scroll-mt-4 py-16 sm:py-24">
       <div className="wrap grid gap-10 lg:grid-cols-12 lg:gap-16">
-        <div data-reveal className="lg:col-span-7">
+        <div data-reveal className="w-[min(70vw,17rem)] lg:col-span-3 lg:w-full"><PhotoFrame /></div>
+        <div data-reveal className="lg:col-span-5">
           <Win title="about.txt" right="read-only">
             <div className="space-y-7 p-6 sm:p-10">
               <p className="f-mono prompt dim">cat about.txt</p>
-              <p className="text-[clamp(1.4rem,2.6vw,2.15rem)] font-light leading-[1.25] tracking-tight">{about.bio[0]}</p>
+              <p className="text-[clamp(1.3rem,2.1vw,1.8rem)] font-light leading-[1.25] tracking-tight">{about.bio[0]}</p>
               <p className="max-w-[60ch] leading-relaxed text-mute">{about.bio[1]}</p>
             </div>
           </Win>
         </div>
 
-        <div className="lg:col-span-5">
+        <div className="lg:col-span-4">
           <div data-reveal>
             <Win title="stack" right="ls -R">
               {about.stack.map((g, i) => (

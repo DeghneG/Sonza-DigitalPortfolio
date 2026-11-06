@@ -23,6 +23,8 @@ export const site = {
   email: 'Jksonza@usa.edu.ph',
   github: 'https://github.com/',
   resume: '/resume.pdf',
+  /** Portrait for the hero frame. Drop the file in /public and set e.g. '/portrait.jpg'. Empty = blank frame. */
+  photo: '',
 }
 
 export const nav = [

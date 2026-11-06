@@ -16,21 +16,21 @@ export default function About() {
         </div>
 
         <div className="lg:col-span-5">
-          <div className="space-y-10">
-            {about.stack.map((g) => (
-              <div key={g.name}>
-                <p data-reveal className="f-mono prompt dim mb-4">ls {g.name}/</p>
-                <ul className="border-t hair">
-                  {g.items.map((l) => (
-                    <li key={l} data-reveal className="flip border-b hair">
-                      <span className="f-display-m block px-1 py-3 text-[clamp(1.25rem,2.4vw,1.9rem)] transition-[padding] duration-500 hover:px-4">
-                        {l}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
+          <div data-reveal>
+            <Win title="stack" right="ls -R">
+              {about.stack.map((g, i) => (
+                <div key={g.name} className={`p-5 sm:p-6 ${i > 0 ? 'border-t hair' : ''}`}>
+                  <p className="f-mono dim mb-3">{g.name}/</p>
+                  <ul className="f-display-m flex flex-wrap gap-x-5 gap-y-1.5 text-[clamp(1.05rem,1.5vw,1.3rem)]">
+                    {g.items.map((l) => (
+                      <li key={l}>
+                        <span className="u cursor-default">{l}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </Win>
           </div>
         </div>
       </div>

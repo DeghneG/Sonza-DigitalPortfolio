@@ -10,7 +10,7 @@ web
 Professors and a school panel reviewing graded coursework (Prelim, Midterm, Finals). They need to find each term's project fast and judge it from a clear case study.
 
 ## Product Purpose
-Personal digital portfolio of John Khyne E. Sonza, a Computer Science student at the University of San Agustin. Success is a panel member understanding who he is, what he can build, and reading the One ID, One Connect case study without friction.
+Personal digital portfolio of John Khyne E. Sonza, an Information Technology student at the University of San Agustin. Success is a panel member understanding who he is, what he can build, and reading the One ID, One Connect case study without friction.
 
 ## Positioning
 A student portfolio organised by academic term (Prelim / Midterm / Finals) with real case studies, not a generic developer landing page.

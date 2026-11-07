@@ -18,7 +18,7 @@ export const site = {
   firstName: 'John Khyne',
   lastName: 'E. Sonza',
   label: 'Digital Portfolio',
-  role: 'Computer Science Student',
+  role: 'Information Technology Student',
   tagline: 'Building clean, dependable software.',
   email: 'Jksonza@usa.edu.ph',
   github: 'https://github.com/',
@@ -36,7 +36,7 @@ export const nav = [
 
 export const titleBlock = [
   { k: 'Document', v: 'Digital Portfolio' },
-  { k: 'Role', v: 'Computer Science Student' },
+  { k: 'Role', v: 'Information Technology Student' },
   { k: 'Institution', v: 'University of San Agustin' },
   { k: 'Enrolled', v: '2024 — Now' },
 ]

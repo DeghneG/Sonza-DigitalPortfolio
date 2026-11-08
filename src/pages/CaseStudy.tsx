@@ -24,7 +24,7 @@ export default function CaseStudy() {
 
   if (!cs) return <Navigate to="/#work" replace />
 
-  const real = work.projects.filter((p) => !p.placeholder)
+  const real = work.projects.filter((p) => caseStudies[p.slug])
   const idx = real.findIndex((p) => p.slug === slug)
   const prev = cs.prev ?? (idx > 0 ? real[idx - 1] : null)
   const next = cs.next ?? (idx >= 0 && idx < real.length - 1 ? real[idx + 1] : null)

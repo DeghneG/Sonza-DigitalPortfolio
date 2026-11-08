@@ -4,7 +4,7 @@ import { work, type Category } from '../content/site'
 import Arrow from './Arrow'
 
 export default function Work() {
-  const [active, setActive] = useState<Category>('Finals')
+  const [active, setActive] = useState<Category>('Capstone')
 
   return (
     <section id="work" className="scroll-mt-4 py-16 sm:py-24">

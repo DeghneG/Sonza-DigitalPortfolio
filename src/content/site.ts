@@ -2,7 +2,7 @@
 // All site copy lives here. Edit this file to change any text.
 // ─────────────────────────────────────────────────────────────
 
-export type Category = 'Prelim' | 'Midterm' | 'Finals'
+export type Category = 'Prelim' | 'Midterm' | 'Finals' | 'Capstone'
 
 export interface Project {
   slug: string
@@ -71,7 +71,7 @@ export const credentials = {
 export const work = {
   heading: 'Work',
   intro: 'Project case studies, grouped by term.',
-  categories: ['Prelim', 'Midterm', 'Finals'] as Category[],
+  categories: ['Prelim', 'Midterm', 'Finals', 'Capstone'] as Category[],
   projects: [
     {
       slug: 'prelim-placeholder-1',
@@ -110,10 +110,17 @@ export const work = {
       title: 'One ID, One Connect',
       summary:
         'Unifying student identification for enhanced digital engagement and notifications at the University of San Agustin Junior High School.',
-      category: 'Finals',
+      category: 'Capstone',
     },
     {
       slug: 'finals-placeholder-1',
+      title: 'Finals Project One',
+      summary: 'Placeholder — project description goes here.',
+      category: 'Finals',
+      placeholder: true,
+    },
+    {
+      slug: 'finals-placeholder-2',
       title: 'Finals Project Two',
       summary: 'Placeholder — project description goes here.',
       category: 'Finals',

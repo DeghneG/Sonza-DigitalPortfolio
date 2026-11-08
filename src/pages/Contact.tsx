@@ -3,7 +3,6 @@ import { contact, site } from '../content/site'
 import { useReveal } from '../hooks/useReveal'
 import Arrow from '../components/Arrow'
 import Win from '../components/Win'
-import PhotoFrame from '../components/PhotoFrame'
 
 export default function Contact() {
   const ref = useReveal<HTMLElement>({ start: 'top 100%' })
@@ -22,17 +21,10 @@ export default function Contact() {
   return (
     <main ref={ref} className="flex min-h-svh flex-col justify-center py-28">
       <div className="wrap">
-        <div className="grid items-end gap-10 lg:grid-cols-12">
-          <div className="lg:col-span-8">
-          <h1 data-reveal className="f-display text-[clamp(2.3rem,8.4vw,8rem)]">
-            {contact.heading}
-          </h1>
-          <p data-reveal className="mt-6 max-w-[42ch] text-lg text-mute">{contact.lead}</p>
-          </div>
-          <div data-reveal className="w-[min(60vw,15rem)] lg:col-span-3 lg:col-start-10 lg:w-full">
-            <PhotoFrame />
-          </div>
-        </div>
+        <h1 data-reveal className="f-display text-[clamp(2.3rem,8.4vw,8rem)]">
+          {contact.heading}
+        </h1>
+        <p data-reveal className="mt-6 max-w-[42ch] text-lg text-mute">{contact.lead}</p>
 
         <div data-reveal className="mt-14">
           <Win title="mail" right="smtp">

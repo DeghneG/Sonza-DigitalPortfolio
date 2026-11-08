@@ -190,40 +190,6 @@ a, button { cursor: pointer; }
 }
 .silver:hover, .silver:focus-visible { background-position: 0 0, 100% 0; }
 
-/* ── portrait frame: a measured plate ── */
-.photo-frame { position: relative; margin: 0; padding: 14px 0 0 14px; width: 100%; }
-.photo-plate {
-  position: relative;
-  aspect-ratio: 4 / 5;
-  background: var(--color-ink-2, #0f0f0f);
-  border: 1px solid var(--color-hair);
-  display: grid; place-items: center;
-}
-/* silver brackets sit proud of the edge */
-.photo-corner { position: absolute; width: 22px; height: 22px; border: 0 solid var(--color-silver); }
-.photo-corner--tl { top: -7px; left: -7px; border-top-width: 2px; border-left-width: 2px; }
-.photo-corner--tr { top: -7px; right: -7px; border-top-width: 2px; border-right-width: 2px; }
-.photo-corner--bl { bottom: -7px; left: -7px; border-bottom-width: 2px; border-left-width: 2px; }
-.photo-corner--br { bottom: -7px; right: -7px; border-bottom-width: 2px; border-right-width: 2px; }
-/* ruler ticks: minor every 10%, drawn outside the top and left edges */
-.photo-ruler { position: absolute; pointer-events: none; opacity: 0.7; }
-.photo-ruler--x {
-  top: 0; left: 14px; right: 0; height: 8px;
-  background:
-    repeating-linear-gradient(90deg, var(--color-silver) 0 1px, transparent 1px 10%) top / 100% 5px no-repeat,
-    repeating-linear-gradient(90deg, var(--color-silver) 0 1px, transparent 1px 50%) top / 100% 9px no-repeat;
-}
-.photo-ruler--y {
-  left: 0; top: 14px; bottom: 28px; width: 8px;
-  background:
-    repeating-linear-gradient(180deg, var(--color-silver) 0 1px, transparent 1px 10%) left / 5px 100% no-repeat,
-    repeating-linear-gradient(180deg, var(--color-silver) 0 1px, transparent 1px 50%) left / 9px 100% no-repeat;
-}
-/* registration cross */
-.photo-cross { position: relative; width: 28px; height: 28px; opacity: 0.55; }
-.photo-cross::before, .photo-cross::after { content: ""; position: absolute; background: var(--color-silver); }
-.photo-cross::before { left: 50%; top: 0; bottom: 0; width: 1px; }
-.photo-cross::after { top: 50%; left: 0; right: 0; height: 1px; }
 
 /* silver lettering: brushed grain over a sheen that slowly travels across the line */
 .silver-fill {

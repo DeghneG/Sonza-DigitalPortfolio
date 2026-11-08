@@ -11,6 +11,8 @@ export interface Project {
   category: Category
   /** Thumbnail shown in the Work list (path under /public). */
   image?: string
+  /** Thumbnail crop as CSS aspect-ratio, e.g. '1/1'. Defaults to the comic's 977/893. */
+  imageRatio?: string
   /** If set, the row opens this file (e.g. a PDF) instead of a case-study page. */
   href?: string
   /** Group members, other than John, credited on the project. */
@@ -97,11 +99,13 @@ export const work = {
       team: ['Vince Esmero', 'Armaan Singh', 'Adrian Santander', 'Angelo Jules Gubaton'],
     },
     {
-      slug: 'midterm-placeholder-2',
-      title: 'Midterm Project Two',
-      summary: 'Placeholder — project description goes here.',
+      slug: 'the-last-cookie-video',
+      title: 'The Last Cookie (Video)',
+      summary: 'A 25-second vertical video version of The Last Cookie.',
       category: 'Midterm',
-      placeholder: true,
+      image: '/Midterm/the-last-cookie-video.jpg',
+      imageRatio: '1/1',
+      href: '/Midterm/The%20Last%20Cookie.mp4',
     },
     {
       slug: 'one-id-one-connect',

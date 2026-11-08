@@ -56,13 +56,14 @@ export default function Work() {
                                 src={p.image}
                                 alt={`${p.title} cover`}
                                 loading="lazy"
-                                className="block aspect-[977/893] w-full object-cover"
+                                className="block w-full object-cover"
+                                style={{ aspectRatio: p.imageRatio ?? '977/893' }}
                               />
                             </span>
                           )}
                           <span className="min-w-0 flex-1">
                             <span className="f-mono prompt dim mb-2 block truncate">
-                              {p.href ? `open ${p.href.split('/').pop()}` : p.placeholder ? `cd ${p.slug}` : `cd /work/${p.slug}`}
+                              {p.href ? `open ${decodeURIComponent(p.href.split('/').pop() ?? '')}` : p.placeholder ? `cd ${p.slug}` : `cd /work/${p.slug}`}
                             </span>
                             <span className="f-display-m block text-[clamp(1.4rem,2.6vw,2.3rem)]">{p.title}</span>
                             <span className="dim mt-2 block max-w-[52ch] text-sm leading-relaxed">{p.summary}</span>
@@ -76,7 +77,7 @@ export default function Work() {
                             <span className="f-mono dim whitespace-nowrap">Pending</span>
                           ) : (
                             <span className="f-mono flex items-center gap-2 whitespace-nowrap">
-                              {p.href ? 'PDF' : 'Case study'} <Arrow />
+                              {p.href ? (/.pdf$/i.test(p.href) ? 'PDF' : 'Video') : 'Case study'} <Arrow />
                             </span>
                           )}
                         </>

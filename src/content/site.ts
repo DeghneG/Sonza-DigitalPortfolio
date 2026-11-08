@@ -55,7 +55,7 @@ export const about = {
   stack: [
     { name: 'frontend', items: ['JavaScript', 'TypeScript', 'React', 'Tailwind CSS', 'GSAP'] },
     { name: 'backend', items: ['Python', 'Java', 'PHP', 'SQL'] },
-    { name: 'other', items: ['C', 'Vite', 'Canva'] },
+    { name: 'other', items: ['C', 'Vite', 'Canva', 'Adobe Illustrator'] },
   ],
 }
 

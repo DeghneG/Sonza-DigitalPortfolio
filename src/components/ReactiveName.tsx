@@ -85,7 +85,7 @@ export default function ReactiveName({ lines, label }: { lines: Line[]; label: s
           <span
             data-mask
             className={`block whitespace-nowrap ${
-              line.outline ? 'text-transparent [-webkit-text-stroke:max(1px,0.012em)_var(--color-silver)]' : ''
+              line.outline ? 'silver-fill' : ''
             }`}
           >
             {Array.from(line.text).map((ch, i) => (

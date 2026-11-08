@@ -113,11 +113,13 @@ export const work = {
       category: 'Capstone',
     },
     {
-      slug: 'finals-placeholder-1',
-      title: 'Finals Project One',
-      summary: 'Placeholder — project description goes here.',
+      slug: 'it213-final',
+      title: 'IT213 Final Project',
+      summary: 'An animation of a black ball and a blue ball moving across a white canvas.',
       category: 'Finals',
-      placeholder: true,
+      image: '/final/Sonza_-John-Khyne-E.-IT213%282%29.gif',
+      imageRatio: '16/9',
+      href: '/final/Sonza_-John-Khyne-E.-IT213%282%29.gif',
     },
     {
       slug: 'finals-placeholder-2',

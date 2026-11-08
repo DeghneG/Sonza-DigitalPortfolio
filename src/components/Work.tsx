@@ -77,7 +77,7 @@ export default function Work() {
                             <span className="f-mono dim whitespace-nowrap">Pending</span>
                           ) : (
                             <span className="f-mono flex items-center gap-2 whitespace-nowrap">
-                              {p.href ? (/.pdf$/i.test(p.href) ? 'PDF' : 'Video') : 'Case study'} <Arrow />
+                              {p.href ? (/\.pdf$/i.test(p.href) ? 'PDF' : /\.gif$/i.test(p.href) ? 'GIF' : 'Video') : 'Case study'} <Arrow />
                             </span>
                           )}
                         </>

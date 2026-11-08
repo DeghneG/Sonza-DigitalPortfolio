@@ -50,27 +50,46 @@ export default function Work() {
                     {items.map((p) => {
                       const body = (
                         <>
-                          <span className="min-w-0">
+                          {p.image && (
+                            <span className="relative block w-20 flex-none self-start border hair sm:w-36 lg:w-44">
+                              <img
+                                src={p.image}
+                                alt={`${p.title} cover`}
+                                loading="lazy"
+                                className="block aspect-[977/893] w-full object-cover"
+                              />
+                            </span>
+                          )}
+                          <span className="min-w-0 flex-1">
                             <span className="f-mono prompt dim mb-2 block truncate">
-                              {p.placeholder ? `cd ${p.slug}` : `cd /work/${p.slug}`}
+                              {p.href ? `open ${p.href.split('/').pop()}` : p.placeholder ? `cd ${p.slug}` : `cd /work/${p.slug}`}
                             </span>
                             <span className="f-display-m block text-[clamp(1.4rem,2.6vw,2.3rem)]">{p.title}</span>
                             <span className="dim mt-2 block max-w-[52ch] text-sm leading-relaxed">{p.summary}</span>
+                            {p.team && (
+                              <span className="f-mono dim mt-3 block max-w-[60ch] normal-case">
+                                With {p.team.join(', ')}
+                              </span>
+                            )}
                           </span>
                           {p.placeholder ? (
                             <span className="f-mono dim whitespace-nowrap">Pending</span>
                           ) : (
                             <span className="f-mono flex items-center gap-2 whitespace-nowrap">
-                              {p.year} <Arrow />
+                              {p.href ? 'PDF' : 'Case study'} <Arrow />
                             </span>
                           )}
                         </>
                       )
-                      const row = 'flex flex-1 items-start justify-between gap-6 border-b hair p-5 sm:p-7 last:border-b-0 '
+                      const row = 'flex flex-1 items-start justify-between gap-5 border-b hair p-5 sm:gap-6 sm:p-7 last:border-b-0 '
                       return (
                         <li key={p.slug} className="flex flex-col md:flex-1">
                           {p.placeholder ? (
                             <div className={row + 'opacity-60'}>{body}</div>
+                          ) : p.href ? (
+                            <a href={p.href} target="_blank" rel="noreferrer" className={row + 'flip'}>
+                              {body}
+                            </a>
                           ) : (
                             <Link to={`/work/${p.slug}`} className={row + 'flip'}>
                               {body}

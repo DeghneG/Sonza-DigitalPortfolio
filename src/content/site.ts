@@ -9,7 +9,12 @@ export interface Project {
   title: string
   summary: string
   category: Category
-  year: string
+  /** Thumbnail shown in the Work list (path under /public). */
+  image?: string
+  /** If set, the row opens this file (e.g. a PDF) instead of a case-study page. */
+  href?: string
+  /** Group members, other than John, credited on the project. */
+  team?: string[]
   placeholder?: boolean
 }
 
@@ -73,7 +78,6 @@ export const work = {
       title: 'Prelim Project One',
       summary: 'Placeholder — project description goes here.',
       category: 'Prelim',
-      year: '2025',
       placeholder: true,
     },
     {
@@ -81,23 +85,22 @@ export const work = {
       title: 'Prelim Project Two',
       summary: 'Placeholder — project description goes here.',
       category: 'Prelim',
-      year: '2025',
       placeholder: true,
     },
     {
-      slug: 'midterm-placeholder-1',
-      title: 'Midterm Project One',
-      summary: 'Placeholder — project description goes here.',
+      slug: 'the-last-cookie',
+      title: 'The Last Cookie',
+      summary: 'A six-panel comic about two friends and the last cookie in the jar.',
       category: 'Midterm',
-      year: '2025',
-      placeholder: true,
+      image: '/Midterm/the-last-cookie.png',
+      href: '/Midterm/The_Last_Cookie_.pdf',
+      team: ['Vince Esmero', 'Armaan Singh', 'Adrian Santander', 'Angelo Jules Gubaton'],
     },
     {
       slug: 'midterm-placeholder-2',
       title: 'Midterm Project Two',
       summary: 'Placeholder — project description goes here.',
       category: 'Midterm',
-      year: '2025',
       placeholder: true,
     },
     {
@@ -106,14 +109,12 @@ export const work = {
       summary:
         'Unifying student identification for enhanced digital engagement and notifications at the University of San Agustin Junior High School.',
       category: 'Finals',
-      year: '2025',
     },
     {
       slug: 'finals-placeholder-1',
       title: 'Finals Project Two',
       summary: 'Placeholder — project description goes here.',
       category: 'Finals',
-      year: '2025',
       placeholder: true,
     },
   ] as Project[],

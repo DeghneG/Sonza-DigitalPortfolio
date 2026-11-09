@@ -63,7 +63,7 @@ export default function Work() {
                           )}
                           <span className="min-w-0 flex-1">
                             <span className="f-mono prompt dim mb-2 block truncate">
-                              {p.href ? (/^https?:/i.test(p.href) ? `open ${new URL(p.href).hostname}` : `open ${decodeURIComponent(p.href.split('/').pop() ?? '')}`) : p.placeholder ? `cd ${p.slug}` : `cd /work/${p.slug}`}
+                              {p.href ? (/^https?:/i.test(p.href) ? `open ${new URL(p.href).hostname}` : `open ${decodeURIComponent((p.href.split('/').pop() ?? '').split('#')[0])}`) : p.placeholder ? `cd ${p.slug}` : `cd /work/${p.slug}`}
                             </span>
                             <span className="f-display-m block text-[clamp(1.4rem,2.6vw,2.3rem)]">{p.title}</span>
                             <span className="dim mt-2 block max-w-[52ch] text-sm leading-relaxed">{p.summary}</span>

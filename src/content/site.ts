@@ -100,11 +100,11 @@ export const work = {
     {
       slug: 'dartboard-recording',
       title: 'Dartboard Recording',
-      summary: 'A 10-second screen recording of a dartboard.',
+      summary: 'A 36-second screen recording of a dartboard.',
       category: 'Prelim',
       image: '/final/desktop-recording-2026-11-09.jpg',
       imageRatio: '1/1',
-      href: '/final/desktop-recording-2026-11-09.mp4',
+      href: '/final/desktop-recording-2026-11-09.mp4#t=28',
     },
     {
       slug: 'the-last-cookie',

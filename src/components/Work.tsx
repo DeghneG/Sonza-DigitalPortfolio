@@ -63,7 +63,7 @@ export default function Work() {
                           )}
                           <span className="min-w-0 flex-1">
                             <span className="f-mono prompt dim mb-2 block truncate">
-                              {p.href ? `open ${decodeURIComponent(p.href.split('/').pop() ?? '')}` : p.placeholder ? `cd ${p.slug}` : `cd /work/${p.slug}`}
+                              {p.href ? (/^https?:/i.test(p.href) ? `open ${new URL(p.href).hostname}` : `open ${decodeURIComponent(p.href.split('/').pop() ?? '')}`) : p.placeholder ? `cd ${p.slug}` : `cd /work/${p.slug}`}
                             </span>
                             <span className="f-display-m block text-[clamp(1.4rem,2.6vw,2.3rem)]">{p.title}</span>
                             <span className="dim mt-2 block max-w-[52ch] text-sm leading-relaxed">{p.summary}</span>
@@ -77,7 +77,7 @@ export default function Work() {
                             <span className="f-mono dim whitespace-nowrap">Pending</span>
                           ) : (
                             <span className="f-mono flex items-center gap-2 whitespace-nowrap">
-                              {p.href ? (/\.pdf$/i.test(p.href) ? 'PDF' : /\.gif$/i.test(p.href) ? 'GIF' : 'Video') : 'Case study'} <Arrow />
+                              {p.href ? (/drive\.google\.com/i.test(p.href) ? 'Drive' : /\.pdf$/i.test(p.href) ? 'PDF' : /\.gif$/i.test(p.href) ? 'GIF' : /\.(png|jpe?g|webp)$/i.test(p.href) ? 'Image' : 'Video') : 'Case study'} <Arrow />
                             </span>
                           )}
                         </>

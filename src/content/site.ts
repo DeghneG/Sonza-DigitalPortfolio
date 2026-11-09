@@ -74,11 +74,13 @@ export const work = {
   categories: ['Prelim', 'Midterm', 'Finals', 'Capstone'] as Category[],
   projects: [
     {
-      slug: 'prelim-placeholder-1',
-      title: 'Prelim Project One',
-      summary: 'Placeholder — project description goes here.',
+      slug: 'community-voice-logo',
+      title: 'Community Voice Logo',
+      summary: 'Logo for Community Voice, an "AI-Powered. People Focused." brand.',
       category: 'Prelim',
-      placeholder: true,
+      image: '/prelim/community-voice-logo.png',
+      imageRatio: '1/1',
+      href: 'https://drive.google.com/drive/folders/1X_t8iXAuaFQZHyfuK_AGx3RzzrCwou1K',
     },
     {
       slug: 'prelim-placeholder-2',

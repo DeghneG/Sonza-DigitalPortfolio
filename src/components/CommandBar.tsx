@@ -1,9 +1,11 @@
 import { Link, useLocation } from 'react-router-dom'
 import { nav, site } from '../content/site'
 import Arrow from './Arrow'
+import { useActiveSection } from '../hooks/useActiveSection'
 
 export default function CommandBar() {
   const { pathname } = useLocation()
+  const section = useActiveSection()
   return (
     <div className="fixed inset-x-0 bottom-0 z-40 border-t hair bg-ink">
       <div className="flex h-14 items-stretch">
@@ -12,7 +14,7 @@ export default function CommandBar() {
           <span className="hidden sm:inline">cd ~</span>
           <span className="sm:hidden">~</span>
         </Link>
-        <nav aria-label="Primary" className="bar-nav flex flex-1 items-center gap-3 overflow-x-auto px-3 sm:gap-8 sm:px-6">
+        <nav aria-label="Primary" className="bar-nav flex flex-1 lg:hidden items-center gap-3 overflow-x-auto px-3 sm:gap-8 sm:px-6">
           {nav.map((n) => {
             const here = n.href === pathname
             return (
@@ -27,6 +29,13 @@ export default function CommandBar() {
             )
           })}
         </nav>
+        {/* Wide screens: the top sheet index handles navigation; this line reports where you are. */}
+        <p className="f-mono hidden flex-1 items-center gap-3 px-6 lg:flex" aria-live="polite">
+          <span className="dim">$</span>
+          <span>pwd</span>
+          <span className="dim">→</span>
+          <span className="text-bone">{section === 'home' ? '~' : `~/${section}`}</span>
+        </p>
         <a
           href={site.resume}
           target="_blank"

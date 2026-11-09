@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Routes, useLocation } from 'react-router-dom'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import TopBar from './components/TopBar'
+import SheetNav from './components/SheetNav'
 import ScrollProgress from './components/ScrollProgress'
 import CommandBar from './components/CommandBar'
 import Footer from './components/Footer'
@@ -52,6 +53,7 @@ export default function App() {
         <i /><i /><i /><i />
       </div>
       <TopBar />
+      <SheetNav />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/contact" element={<Contact />} />

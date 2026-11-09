@@ -14,7 +14,7 @@ export default function Work() {
           <p className="f-mono prompt dim">ls work/ --by-term</p>
         </div>
 
-        <div data-reveal className="flex flex-col border hair md:h-[36rem] md:flex-row">
+        <div data-reveal className="flex flex-col border hair md:min-h-[36rem] md:flex-row">
           {work.categories.map((cat, idx) => {
             const on = cat === active
             const items = work.projects.filter((p) => p.category === cat)

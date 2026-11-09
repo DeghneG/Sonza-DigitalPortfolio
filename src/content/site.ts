@@ -98,6 +98,15 @@ export const work = {
       href: '/prelim/greenstep-campaign-plan.png',
     },
     {
+      slug: 'dartboard-recording',
+      title: 'Dartboard Recording',
+      summary: 'A 10-second screen recording of a dartboard.',
+      category: 'Prelim',
+      image: '/final/desktop-recording-2026-11-09.jpg',
+      imageRatio: '1/1',
+      href: '/final/desktop-recording-2026-11-09.mp4',
+    },
+    {
       slug: 'the-last-cookie',
       title: 'The Last Cookie',
       summary: 'A six-panel comic about two friends and the last cookie in the jar.',
@@ -132,13 +141,11 @@ export const work = {
       href: '/final/Sonza_-John-Khyne-E.-IT213%282%29.gif',
     },
     {
-      slug: 'dartboard-recording',
-      title: 'Dartboard Recording',
-      summary: 'A 29-second screen recording of a dart landing on a dartboard.',
+      slug: 'finals-placeholder-2',
+      title: 'Finals Project Two',
+      summary: 'Placeholder — project description goes here.',
       category: 'Finals',
-      image: '/final/desktop-recording-2026-11-09.jpg',
-      imageRatio: '1/1',
-      href: '/final/desktop-recording-2026-11-09.mp4',
+      placeholder: true,
     },
   ] as Project[],
 }

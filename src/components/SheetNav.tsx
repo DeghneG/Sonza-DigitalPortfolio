@@ -38,9 +38,18 @@ export default function SheetNav() {
     placed.current = true
     const onResize = () => place(false)
     window.addEventListener('resize', onResize)
-    // fonts load after first paint and change the tab widths
-    document.fonts?.ready.then(() => place(false))
-    return () => window.removeEventListener('resize', onResize)
+    // the web font arrives after first paint and changes the tab widths: re-measure whenever the strip resizes
+    const ro = new ResizeObserver(onResize)
+    if (wrap.current) ro.observe(wrap.current)
+    // belt and braces: fonts finishing, plus a couple of late re-measures
+    document.fonts?.addEventListener?.('loadingdone', onResize)
+    const timers = [150, 600, 1500].map((ms) => window.setTimeout(onResize, ms))
+    return () => {
+      window.removeEventListener('resize', onResize)
+      document.fonts?.removeEventListener?.('loadingdone', onResize)
+      timers.forEach(clearTimeout)
+      ro.disconnect()
+    }
   }, [active])
 
   return (

@@ -25,14 +25,13 @@ export default function Footer() {
     { k: 'Drawn by', v: site.name },
     { k: 'Institution', v: 'University of San Agustin' },
     { k: 'Revision', v: rev },
-    { k: 'Built with', v: 'Vite · React · GSAP' },
   ]
 
   return (
     <footer ref={ref} onPointerMove={onMove} onPointerLeave={onLeave} aria-label={footer.label} className="relative mt-10 overflow-hidden border-t hair">
       <div className="wrap pt-16">
         <div data-reveal className="grid border hair md:grid-cols-12">
-          <dl className="grid grid-cols-2 md:col-span-8 md:grid-cols-4">
+          <dl className="grid grid-cols-2 md:col-span-8 md:grid-cols-3">
             {cells.map((c, i) => (
               <div
                 key={c.k}

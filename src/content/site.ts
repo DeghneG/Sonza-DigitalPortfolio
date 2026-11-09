@@ -32,7 +32,6 @@ export const site = {
   role: 'Information Technology Student',
   tagline: 'Building clean, dependable software.',
   email: 'Jksonza@usa.edu.ph',
-  github: 'https://github.com/',
   resume: '/resume.pdf',
 }
 
@@ -203,7 +202,6 @@ export const caseStudies: Record<string, CaseStudy> = {
 export const footer = {
   label: 'Footer navigation',
   links: [
-    { label: 'GitHub', href: site.github, external: true },
     { label: 'Email', href: `mailto:${site.email}`, external: false },
   ],
 }

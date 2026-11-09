@@ -57,7 +57,7 @@ export default function Work() {
                                 alt={`${p.title} cover`}
                                 loading="lazy"
                                 className="block w-full object-cover"
-                                style={{ aspectRatio: p.imageRatio ?? '977/893' }}
+                                style={{ aspectRatio: p.imageRatio ?? '977/893', objectPosition: p.imagePosition }}
                               />
                             </span>
                           )}

@@ -13,6 +13,8 @@ export interface Project {
   image?: string
   /** Thumbnail crop as CSS aspect-ratio, e.g. '1/1'. Defaults to the comic's 977/893. */
   imageRatio?: string
+  /** CSS object-position for the thumbnail crop, e.g. 'top'. Defaults to center. */
+  imagePosition?: string
   /** If set, the row opens this file (e.g. a PDF) instead of a case-study page. */
   href?: string
   /** Group members, other than John, credited on the project. */
@@ -83,11 +85,14 @@ export const work = {
       href: 'https://drive.google.com/drive/folders/1X_t8iXAuaFQZHyfuK_AGx3RzzrCwou1K',
     },
     {
-      slug: 'prelim-placeholder-2',
-      title: 'Prelim Project Two',
-      summary: 'Placeholder — project description goes here.',
+      slug: 'greenstep',
+      title: 'GreenStep',
+      summary: 'A campaign plan for GreenStep, an app that turns everyday eco-friendly actions into rewards.',
       category: 'Prelim',
-      placeholder: true,
+      image: '/prelim/greenstep-campaign-plan.png',
+      imageRatio: '1/1',
+      imagePosition: 'top',
+      href: '/prelim/greenstep-campaign-plan.png',
     },
     {
       slug: 'the-last-cookie',

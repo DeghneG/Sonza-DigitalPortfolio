@@ -2,7 +2,7 @@ import type { ReactNode } from 'react'
 import { Link, Navigate, useParams } from 'react-router-dom'
 import { caseStudies, work } from '../content/site'
 import { useReveal } from '../hooks/useReveal'
-import Arrow from '../components/Arrow'
+import BackButton from '../components/BackButton'
 
 function Sheet({ id, title, children }: { id: string; title: string; children: ReactNode }) {
   return (
@@ -39,9 +39,9 @@ export default function CaseStudy() {
   return (
     <main ref={ref} className="pt-28">
       <div className="wrap">
-        <Link data-reveal to="/#work" className="f-mono u inline-flex items-center gap-2">
-          <Arrow dir="w" /> work/
-        </Link>
+        <div data-reveal>
+          <BackButton to="/#work" label="Back to work" />
+        </div>
 
         <header className="pb-16 pt-10 sm:pb-24">
           <h1 data-reveal className="f-display text-[clamp(2.2rem,8.2vw,8rem)]">

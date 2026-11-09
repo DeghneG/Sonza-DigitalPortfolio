@@ -31,8 +31,9 @@ function ScrollManager() {
   useEffect(() => {
     if (hash) {
       const t = setTimeout(() => {
-        document.querySelector(hash)?.scrollIntoView({ behavior: 'smooth' })
+        // refresh first: refreshing mid-scroll snaps the page back to its old position
         ScrollTrigger.refresh()
+        document.querySelector(hash)?.scrollIntoView({ behavior: 'smooth' })
       }, 80)
       return () => clearTimeout(t)
     }

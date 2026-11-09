@@ -3,6 +3,7 @@ import { contact, site } from '../content/site'
 import { useReveal } from '../hooks/useReveal'
 import Arrow from '../components/Arrow'
 import Win from '../components/Win'
+import BackButton from '../components/BackButton'
 
 export default function Contact() {
   const ref = useReveal<HTMLElement>({ start: 'top 100%' })
@@ -21,6 +22,9 @@ export default function Contact() {
   return (
     <main ref={ref} className="flex min-h-svh flex-col justify-center py-28">
       <div className="wrap">
+        <div data-reveal className="mb-10">
+          <BackButton />
+        </div>
         <h1 data-reveal className="f-display text-[clamp(2.3rem,8.4vw,8rem)]">
           {contact.heading}
         </h1>

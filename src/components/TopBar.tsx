@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
 
 function manilaTime() {
   return new Intl.DateTimeFormat('en-GB', {
@@ -18,10 +17,7 @@ export default function TopBar() {
   }, [])
   return (
     <div className="pointer-events-none fixed inset-x-0 top-0 z-40 mix-blend-difference">
-      <div className="flex items-center justify-between px-9 pt-6 text-bone sm:px-12">
-        <Link to="/" className="f-mono pointer-events-auto" aria-label="Home">
-          JKS
-        </Link>
+      <div className="flex items-center justify-end px-9 pt-6 text-bone sm:px-12">
         <span className="f-mono">PH — {t}</span>
       </div>
     </div>

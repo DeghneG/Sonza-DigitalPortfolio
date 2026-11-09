@@ -17,6 +17,8 @@ export interface Project {
   imagePosition?: string
   /** If set, the row opens this file (e.g. a PDF) instead of a case-study page. */
   href?: string
+  /** Optional second link, shown as a "View more" button on the row (e.g. a Drive folder). */
+  moreHref?: string
   /** Group members, other than John, credited on the project. */
   team?: string[]
   placeholder?: boolean
@@ -82,7 +84,8 @@ export const work = {
       category: 'Prelim',
       image: '/prelim/community-voice-logo.png',
       imageRatio: '1/1',
-      href: 'https://drive.google.com/drive/folders/1X_t8iXAuaFQZHyfuK_AGx3RzzrCwou1K',
+      href: '/prelim/community-voice-logo.png',
+      moreHref: 'https://drive.google.com/drive/folders/1X_t8iXAuaFQZHyfuK_AGx3RzzrCwou1K',
     },
     {
       slug: 'greenstep',
@@ -129,11 +132,13 @@ export const work = {
       href: '/final/Sonza_-John-Khyne-E.-IT213%282%29.gif',
     },
     {
-      slug: 'finals-placeholder-2',
-      title: 'Finals Project Two',
-      summary: 'Placeholder — project description goes here.',
+      slug: 'dartboard-recording',
+      title: 'Dartboard Recording',
+      summary: 'A 29-second screen recording of a dart landing on a dartboard.',
       category: 'Finals',
-      placeholder: true,
+      image: '/final/desktop-recording-2026-11-09.jpg',
+      imageRatio: '1/1',
+      href: '/final/desktop-recording-2026-11-09.mp4',
     },
   ] as Project[],
 }

@@ -83,18 +83,32 @@ export default function Work() {
                         </>
                       )
                       const row = 'flex flex-1 items-start justify-between gap-5 border-b hair p-5 sm:gap-6 sm:p-7 last:border-b-0 '
+                      const link = p.href ? (
+                        <a
+                          href={p.href}
+                          target="_blank"
+                          rel="noreferrer"
+                          className={row + 'flip ' + (p.moreHref ? 'pb-20 sm:pb-7' : '')}
+                        >
+                          {body}
+                        </a>
+                      ) : (
+                        <Link to={`/work/${p.slug}`} className={row + 'flip'}>
+                          {body}
+                        </Link>
+                      )
                       return (
-                        <li key={p.slug} className="flex flex-col md:flex-1">
-                          {p.placeholder ? (
-                            <div className={row + 'opacity-60'}>{body}</div>
-                          ) : p.href ? (
-                            <a href={p.href} target="_blank" rel="noreferrer" className={row + 'flip'}>
-                              {body}
+                        <li key={p.slug} className="relative flex flex-col md:flex-1">
+                          {p.placeholder ? <div className={row + 'opacity-60'}>{body}</div> : link}
+                          {p.moreHref && (
+                            <a
+                              href={p.moreHref}
+                              target="_blank"
+                              rel="noreferrer"
+                              className="f-mono silver absolute bottom-5 right-5 z-10 inline-flex items-center gap-2 px-4 py-2.5 sm:bottom-7 sm:right-7"
+                            >
+                              View more <Arrow />
                             </a>
-                          ) : (
-                            <Link to={`/work/${p.slug}`} className={row + 'flip'}>
-                              {body}
-                            </Link>
                           )}
                         </li>
                       )

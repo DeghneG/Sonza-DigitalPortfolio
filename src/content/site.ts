@@ -135,9 +135,9 @@ export const work = {
       title: 'IT213 Final Project',
       summary: 'An animation of a black ball and a blue ball moving across a white canvas.',
       category: 'Finals',
-      image: '/final/Sonza_-John-Khyne-E.-IT213%282%29.gif',
+      image: '/final/it213-final.gif',
       imageRatio: '16/9',
-      href: '/final/Sonza_-John-Khyne-E.-IT213%282%29.gif',
+      href: '/final/it213-final.gif',
     },
     {
       slug: 'finals-placeholder-2',

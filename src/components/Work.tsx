@@ -51,16 +51,19 @@ export default function Work() {
                       const body = (
                         <>
                           {p.image && (
-                            <span className="relative block w-20 flex-none self-start overflow-hidden border hair bg-ink-2 sm:w-36 lg:w-44">
+                            <span
+                              className="thumb relative block w-20 flex-none self-start overflow-hidden border hair bg-ink-2 sm:w-36 lg:w-44"
+                              style={{ aspectRatio: p.imageRatio ?? '977/893' }}
+                            >
                               <img
                                 src={p.image}
                                 alt={`${p.title} cover`}
                                 decoding="async"
-                                className="block w-full object-cover"
-                                style={{ aspectRatio: p.imageRatio ?? '977/893', objectPosition: p.imagePosition }}
+                                className="block h-full w-full object-cover"
+                                style={{ objectPosition: p.imagePosition }}
                                 onError={(e) => {
-                                  // never leave an empty box: fall back to showing the title's initials
-                                  e.currentTarget.style.visibility = 'hidden'
+                                  e.currentTarget.style.display = 'none'
+                                  e.currentTarget.parentElement?.setAttribute('data-failed', '')
                                 }}
                               />
                             </span>

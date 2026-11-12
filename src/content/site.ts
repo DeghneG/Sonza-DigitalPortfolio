@@ -140,11 +140,13 @@ export const work = {
       href: '/final/it213-final.gif',
     },
     {
-      slug: 'finals-placeholder-2',
-      title: 'Finals Project Two',
-      summary: 'Placeholder — project description goes here.',
+      slug: 'rocket-animation',
+      title: 'Rocket Animation',
+      summary: 'A short animation of a rocket launching above the Earth.',
       category: 'Finals',
-      placeholder: true,
+      image: '/final/rocket-animation.webp',
+      imageRatio: '16/9',
+      href: '/final/rocket-animation.gif',
     },
   ] as Project[],
 }

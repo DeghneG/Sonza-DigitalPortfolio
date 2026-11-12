@@ -27,3 +27,6 @@ dist-ssr
 .impeccable/review/
 .impeccable/mocks/
 .impeccable/build/
+
+# untouched source files kept locally, not shipped
+originals/
